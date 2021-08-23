@@ -6,13 +6,13 @@ import trello_module
 import logging
 from scrapping_modules import logic_immo
 from scrapping_modules import seloger
-from scrapping_modules import leboncoin
+# from scrapping_modules import leboncoin
 from scrapping_modules import pap
 
 
 logging.basicConfig(level=logging.INFO)
 
-os.chdir(os.path.dirname(sys.argv[0]))
+os.chdir(sys.path[0])
 models.create_tables()
 
 
@@ -29,9 +29,9 @@ if "seloger" in parameters['ad-providers']:
     logging.info("Retrieving from seloger")
     seloger.search(parameters)
 
-if "leboncoin" in parameters['ad-providers']:
-    logging.info("Retrieving from leboncoin")
-    leboncoin.search(parameters)
+# if "leboncoin" in parameters['ad-providers']:
+#     logging.info("Retrieving from leboncoin")
+#     leboncoin.search(parameters)
 
 if "pap" in parameters['ad-providers']:
     logging.info("Retrieving from pap")

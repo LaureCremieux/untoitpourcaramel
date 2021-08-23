@@ -67,5 +67,4 @@ def search_city_code(cities):
                                 headers=header)
         data = request.json()
         keys.append(data['items'][0]['key'])
-
     return keys
